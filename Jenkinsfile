@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Yogeshpisal216/flask-redis-project.git'
+                git branch: 'main', url: 'https://github.com/Yogeshpisal216/Flask-Redis-Project.git'
             }
         }    
 
