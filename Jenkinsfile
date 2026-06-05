@@ -19,10 +19,18 @@ pipeline {
 
         stage('Push') {
             steps {
+
+		withCredentials([usernamePassword(
+                    credentialsId: 'docker-cred',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+			
                 sh '''
                     docker push yogi2112/flask-redis:latest
                 '''
-            }
+                  }
+	     }
         }
 
         stage('Deploy') {
